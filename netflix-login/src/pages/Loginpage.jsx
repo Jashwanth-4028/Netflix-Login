@@ -41,8 +41,10 @@ const Loginpage = () => {
     }
 
     if (!hasError) {
-      axios
-        axios.post("http://localhost:3000/loginpage", { email, password: pass })
+      axios.post("https://netflix-login-fww7.onrender.com/loginpage", { 
+          email, 
+          password: pass   
+        })
         .then((res) => {
           console.log("API response:", res.data);
           if (res.data.success) {
@@ -68,7 +70,6 @@ const Loginpage = () => {
         <div className='bg-black/75 w-full max-w-md p-8 rounded-md text-white'>
           <h1 className='text-3xl font-bold mb-6'>Sign In</h1>
 
-          
           <form onSubmit={check} className='space-y-4'>
             <div>
               <input
@@ -100,7 +101,6 @@ const Loginpage = () => {
               Sign In
             </button>
 
-            
             {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
           </form>
 
